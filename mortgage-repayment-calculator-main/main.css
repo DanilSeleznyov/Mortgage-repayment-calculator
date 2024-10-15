@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  color: hsl(202, 55%, 16%);
+  border-radius: 6px;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.calc {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 200px 0 200px;
+  background: hsl(202, 86%, 94%);
+}
+@media screen and (max-width: 576px) {
+  .calc {
+    padding: 100px 0 100px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .calc {
+    padding: 0;
+  }
+}
+.calc_wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1100px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 30px;
+}
+@media screen and (max-width: 992px) {
+  .calc_wrapper {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 425px) {
+  .calc_wrapper {
+    border-radius: 0;
+  }
+}
+.calc_error_state {
+  display: none;
+  font-size: 13px;
+  color: hsl(4, 69%, 50%);
+  font-weight: 500;
+}
+.calc_mortgage_amount_input {
+  border: 1px solid hsl(203, 41%, 72%);
+  padding-left: 70px;
+}
+.calc_mortgage_amount_input:focus {
+  border-color: hsl(61, 70%, 52%);
+}
+.calc_mortgage_term_input {
+  border: 1px solid hsl(203, 41%, 72%);
+}
+.calc_mortgage_term_input:focus {
+  border-color: hsl(61, 70%, 52%);
+}
+.calc_mortgage_rate_input {
+  border: 1px solid hsl(203, 41%, 72%);
+}
+.calc_mortgage_rate_input:focus {
+  border-color: hsl(61, 70%, 52%);
+}
+.calc_label {
+  color: hsl(200, 26%, 54%);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.calc_clear_btn {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: hsl(200, 24%, 40%);
+  font-weight: 500;
+  font-size: 16px;
+}
+.calc_input_sign {
+  position: absolute;
+  bottom: 1px;
+  font-size: 16px;
+  padding: 10px 22px;
+  font-weight: 700;
+}
+.calc_input_sign_left {
+  color: hsl(202, 55%, 16%);
+  background: hsl(202, 86%, 94%);
+  border-radius: 6px 0 0 6px;
+  left: 1px;
+}
+.calc_input_sign_right {
+  color: hsl(200, 24%, 40%);
+  background: hsl(202, 86%, 94%);
+  border-radius: 0px 6px 6px 0px;
+  right: 1px;
+}
+.calc_input_wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.calc_input_inner_wrapper {
+  position: relative;
+}
+.calc_inputs_wrapper {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0 15px;
+}
+@media screen and (max-width: 576px) {
+  .calc_inputs_wrapper {
+    flex-direction: column;
+  }
+}
+.calc_input_radio_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid hsl(200, 26%, 54%);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: hsl(202, 55%, 16%);
+}
+.calc_input_radio_wrapper:hover {
+  border-color: hsl(61, 70%, 52%);
+}
+.calc_input_radio_wrapper:after {
+  border-color: hsl(61, 70%, 52%);
+}
+.calc_input_radio_wrapper input[type=radio]:checked + .calc_custom_radio {
+  border-color: hsl(61, 70%, 52%);
+}
+.calc_input_radio_wrapper input[type=radio]:checked + .calc_custom_radio::after {
+  display: block;
+  background: hsl(61, 70%, 52%);
+}
+.calc_custom_radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid hsl(203, 41%, 72%);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calc_custom_radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: hsl(200, 24%, 40%);
+  border-radius: 50%;
+  display: none;
+}
+.calc_main {
+  display: flex;
+  flex-direction: column;
+  padding: 35px 0 30px 30px;
+}
+@media screen and (max-width: 992px) {
+  .calc_main {
+    padding: 35px 30px 30px 30px;
+  }
+}
+.calc_title {
+  font-size: 20px;
+  color: hsl(202, 55%, 16%);
+  font-weight: 700;
+}
+.calc_title_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 992px) {
+  .calc_title_wrapper {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+}
+.calc_result {
+  background: hsl(202, 55%, 16%);
+  border-radius: 0px 30px 30px 65px;
+  padding: 100px 20px 80px 20px;
+}
+@media screen and (max-width: 992px) {
+  .calc_result {
+    border-radius: 0px 0px 30px 30px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .calc_result {
+    border-radius: 0;
+  }
+}
+.calc_result_output_main {
+  font-size: 42px;
+  color: hsl(61, 70%, 52%);
+}
+.calc_result_output_secondary {
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+}
+.calc_result_unready {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  gap: 15px;
+}
+.calc_result_ready {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+.calc_result_title {
+  color: hsl(0, 0%, 100%);
+}
+.calc_result_desc {
+  max-width: 420px;
+  font-size: 16px;
+  color: hsl(203, 41%, 72%);
+  font-weight: 500;
+}
+.calc_results_wrapper {
+  background: hsl(61, 70%, 52%);
+  border-radius: 12px;
+  padding-top: 5px;
+  margin-top: 20px;
+}
+.calc_results_wrapper label {
+  margin-bottom: 4px;
+}
+.calc_results_inner_wrapper {
+  display: flex;
+  flex-direction: column;
+  background: hsl(202, 55%, 13%);
+  border-radius: 12px;
+  padding: 30px 25px 30px 25px;
+}
+.calc_results_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 50px;
+  background: hsl(61, 70%, 52%);
+  color: hsl(202, 55%, 16%);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 13.5px 20px 12px 20px;
+  max-width: 300px;
+  border: none;
+  margin-top: 20px;
+}
+.calc_results_btn:hover {
+  background: hsl(61, 65%, 45%);
+}
+.calc_borderline {
+  background: hsl(200, 24%, 40%);
+  max-width: 100%;
+  max-height: 0.5px;
+  border: 0.5px solid rgba(0, 0, 0, 0.3411764706);
+  margin: 25px 0 25px;
+}/*# sourceMappingURL=main.css.map */
